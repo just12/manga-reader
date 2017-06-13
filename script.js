@@ -10,28 +10,30 @@ $(document).ready(function(){
 
 //CONTADOR DE PAGINA
 
-var x = 1;
-$("#esedese").text(x);
-//if(x < 10){x = "00" + x};
-//if (x < 100 && x < 10){x = "0" + x};
-
-$("#button1").click(function(){
-  //if(x < 10){x = "00" + x};
-  x -= 1;
-  $("#esedese").text(x);
-  //if (x < 100 && x < 10){x = "0" + x};
-  $("#imgPrin").css("background-image", "url(src/test/" + x + ".jpg");
-});
-
-
-$("#button2").click(function(){
-  x += 1;
-  $("#esedese").text(x);
-  //if(x < 10){x = "00" + x};
-  //if (x < 100 && x < 10){x = "0" + x};
-  $("#imgPrin").css("background-image", "url(src/test/" + x + ".jpg");
-});
-
 $(document).ready(function(){
-  $("#imgPrin").css("background-image", "url(src/test/" + x + ".jpg");
+  var page = 1;
+  if(page < 10){page = "00" + page};
+  if(page > 10 && page < 100){page = "0" + page};
+  $("#esedese").text(page);
+  $("#imgPrin").css("background-image", "url(src/test/" + page + ".jpg)");
+
+  $("#button1").click(function(){
+    if(page = "00" + page){page = page - "00"};
+    if(page = "0" + page){page = page - "0"};
+    page -= 1;
+    if(page < 10){page = "00" + page};
+    if(page > 10 && page < 100){page = "0" + page};
+    $("#esedese").text(page);
+    $("#imgPrin").css("background-image", "url(src/test/" + page + ".jpg)");
+  });
+
+  $("#button2").click(function(){
+    if(page = "00" + page){page = page - "00"};
+    if(page = "0" + page){page = page - "0"};
+    page += 1;
+    if(page < 10){page = "00" + page};
+    if(page > 10 && page < 100){page = "0" + page};
+    $("#esedese").text(page);
+    $("#imgPrin").css("background-image", "url(src/test/" + page + ".jpg)");
+  });
 });
